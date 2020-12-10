@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<div class="main">
+      <a name="container"></a>
+    <button onclick="window.location.href='/std';">
+      Add Students
+    </button>
+<!--    <a href="/std">Add Students</a>-->
+    <h2>Students Table</h2>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+    {% for data in dataset %}
+  <tr>
+    <td>{{ data.f_name }}</td>
+    <td>{{ data.l_name }}</td>
+    <td>{{ data.email }}</td>
+    <td><a href="{% url 'student-edit' id=data.id %}">Edit</a>
+    <a href="{% url 'student-delete' id=data.id %}">Delete</a></td>
+  </tr>
+     {% endfor %}
+</table>
+    <hr/>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/std/">
+    {% csrf_token %}
+    <label>First name:</label><br>
+    {{form.f_name}}<br>
+    <label>Last name:</label><br>
+    {{form.l_name}}<br><br>
+    <label>Email:</label><br>
+    {{form.email}}<br><br>
+
+</form>
+</body>
+</html>
